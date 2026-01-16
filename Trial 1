@@ -22,3 +22,124 @@ index 0000000000000000000000000000000000000000..adf29362922eb111d96801f29633a2c5
  
 EOF
 )
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/docs/github-setup.md b/docs/github-setup.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..8c43d2b41b437d754a7a3a2cabc6a9eedf6de2df
+--- /dev/null
++++ b/docs/github-setup.md
+@@ -0,0 +1,111 @@
++# GitHub setup guide (beginner friendly)
++
++This guide walks you through creating a GitHub account, creating a repository, and connecting your local project to GitHub.
++
++## 1. Create a GitHub account
++
++1. Go to https://github.com.
++2. Click **Sign up**.
++3. Follow the prompts to create your account.
++
++## 2. Install Git on your computer
++
++Git is the tool that lets your computer talk to GitHub.
++
++### macOS
++
++1. Open **Terminal** (search for Terminal in Spotlight).
++2. Run:
++   ```bash
++   git --version
++   ```
++3. If prompted to install Xcode Command Line Tools, approve it.
++
++### Windows
++
++1. Download Git from https://git-scm.com/download/win.
++2. Run the installer and keep the default options.
++3. Open **Git Bash** and run:
++   ```bash
++   git --version
++   ```
++
++### Linux (Ubuntu/Debian)
++
++1. Open **Terminal**.
++2. Run:
++   ```bash
++   sudo apt update
++   sudo apt install git
++   git --version
++   ```
++
++## 3. Configure Git (one-time setup)
++
++Replace the placeholders with your name and email:
++
++```bash
++git config --global user.name "Your Name"
++git config --global user.email "you@example.com"
++```
++
++## 4. Create a new repository on GitHub
++
++1. Log in to GitHub.
++2. Click **New** (or the **+** menu in the top-right).
++3. Name the repository (for example: `plane-spotter`).
++4. Choose **Public** or **Private**.
++5. Click **Create repository**.
++
++## 5. Connect your local project to GitHub
++
++Open a terminal **in your project folder**, then run:
++
++```bash
++git init
++git add .
++git commit -m "Initial commit"
++```
++
++Then connect to GitHub (replace `<YOUR_GITHUB_USERNAME>` and `<REPO_NAME>`):
++
++```bash
++git branch -M main
++git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/<REPO_NAME>.git
++git push -u origin main
++```
++
++## 6. Common day-to-day workflow
++
++When you make changes:
++
++```bash
++git add .
++git commit -m "Describe your change"
++git push
++```
++
++## 7. Keep secrets out of GitHub
++
++If your web app needs API keys (for example, an aviation data API), keep them in a `.env` file that you do **not** commit.
++
++1. Create a `.env` file:
++   ```bash
++   touch .env
++   ```
++2. Add your keys:
++   ```bash
++   AVIATION_API_KEY=your-key-here
++   ```
++3. Create a `.gitignore` file (or add to it):
++   ```bash
++   echo ".env" >> .gitignore
++   ```
++
++## 8. Helpful next steps for your app
++
++- Sketch what information you want to show for each plane (flight number, origin, altitude, airline, etc.).
++- Decide whether you want a map view or a list view.
++- Look into flight data providers (for example OpenSky Network or ADS-B Exchange) and read their usage policies.
++
++If you get stuck, share the exact error message and the command you ran—copy/paste is perfect.
+ 
+EOF
+)
