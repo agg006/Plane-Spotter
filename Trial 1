@@ -1,1 +1,24 @@
-
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..adf29362922eb111d96801f29633a2c5ac3fc24e
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,14 @@
++# Plane Spotter
++
++A web app concept to identify aircraft you can see from your location, showing each plane’s origin and flight details.
++
++## Getting started
++
++If you are new to GitHub, start here:
++
++- [GitHub setup guide](docs/github-setup.md)
++
++## Notes for this project
++
++- Keep API keys and secrets out of GitHub by using a `.env` file (see the setup guide).
++- If you share your exact coordinates publicly, consider whether you want to obscure them for privacy.
+ 
+EOF
+)
