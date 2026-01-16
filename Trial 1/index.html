@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Plane Spotter - San Diego Final Approach</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">East-facing office window</p>
+          <h1>San Diego (SAN) Final Approach Spotter</h1>
+          <p class="subtitle">
+            Track inbound aircraft lined up for runway 27 at San Diego International by
+            monitoring traffic approaching from the east.
+          </p>
+        </div>
+        <button id="refresh" class="btn">Refresh now</button>
+      </header>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Inbound lineup</h2>
+          <div class="status">
+            <span id="status-pill" class="pill">Loading live data…</span>
+            <span id="timestamp" class="timestamp">--</span>
+          </div>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Callsign</th>
+                <th>Altitude</th>
+                <th>Groundspeed</th>
+                <th>Track</th>
+                <th>Distance to SAN</th>
+              </tr>
+            </thead>
+            <tbody id="flight-rows">
+              <tr>
+                <td colspan="5" class="loading">Loading aircraft…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel tips">
+        <h3>How this works</h3>
+        <ul>
+          <li>
+            Looks for aircraft east of SAN, below 10,000 ft, traveling westbound toward
+            the runway 27 approach path.
+          </li>
+          <li>
+            Updates automatically every 20 seconds using the OpenSky Network public API.
+          </li>
+          <li>
+            If data fails to load due to CORS, run a local proxy and update the API
+            endpoint in <code>app.js</code>.
+          </li>
+        </ul>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

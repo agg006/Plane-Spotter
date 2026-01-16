@@ -1,0 +1,147 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: #f4f7fb;
+  color: #0b1b2b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 20px;
+  box-shadow: 0 16px 35px rgba(16, 45, 87, 0.1);
+}
+
+.hero h1 {
+  margin: 6px 0 8px;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #4b6b99;
+  margin: 0;
+}
+
+.subtitle {
+  margin: 0;
+  color: #3b4f6b;
+  font-size: 1rem;
+}
+
+.btn {
+  align-self: flex-start;
+  border: none;
+  background: #1c69d4;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(28, 105, 212, 0.25);
+}
+
+.panel {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 10px 24px rgba(14, 38, 80, 0.08);
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: #4b5d75;
+}
+
+.pill {
+  background: #e5eefb;
+  color: #1c69d4;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px 8px;
+  border-bottom: 1px solid #edf1f7;
+  font-size: 0.95rem;
+}
+
+th {
+  color: #4b6b99;
+  font-weight: 600;
+}
+
+.loading {
+  text-align: center;
+  color: #71829f;
+  padding: 20px 0;
+}
+
+.timestamp {
+  font-variant-numeric: tabular-nums;
+}
+
+.tips ul {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  color: #4b5d75;
+  line-height: 1.6;
+}
+
+@media (min-width: 860px) {
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .btn {
+    align-self: center;
+  }
+}
